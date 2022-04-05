@@ -2,9 +2,7 @@
 GREEN='\033[0;32m'
 while : 
 do
-echo "${GREEN} INICIANDO O ALEATORY - BOT
-ESTE ARQUIVO É PROGRAMADO PARA O BOT NÃO CAIR
-APÓS ALGUMA QUEDA DE CONEXÃO"
+echo "${GREEN} Aleatory - MD 2.0 _ Auto reconexão ativada para prevenção de quedas.."
     node index.js
     sleep 1
 

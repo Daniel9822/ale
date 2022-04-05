@@ -53,12 +53,14 @@ return `
 ╎⩺ ${prefix}dono4 @marca
 ╎⩺ ${prefix}dono5 @marca
 ╎⩺ ${prefix}bcgp (TM-PRA-PV-MEMBROS)
+╎⩺ ${prefix}transmitir (MSG-GRUPOS) 
 ╎
 ╰─────────────╯
 `
 
 }
 exports.menudono = menudono
+
 
 
 

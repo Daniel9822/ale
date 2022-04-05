@@ -1,5 +1,5 @@
 const fs = require('fs');
-const voting = JSON.parse(fs.readFileSync('./armor/voting.json'))
+const voting = JSON.parse(fs.readFileSync('./armor/funcoes/voting.json'))
 
 const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -7,7 +7,7 @@ const sleep = async (ms) => {
 
 const delVote = (_id) => {
 	voting.splice(_id,0)
-    fs.writeFileSync(`./armor/voting.json`, JSON.stringify(voting))
+    fs.writeFileSync(`./armor/funcoes/voting.json`, JSON.stringify(voting))
     fs.unlinkSync(`./armor/vote/${_id}.json`)
     fs.unlinkSync(`./armor/${_id}.json`)
 }
@@ -16,7 +16,7 @@ const addVote = async(_id,_value1,_value2,_value3,reply) => {
 	voting.push(_id)
     fs.writeFileSync(`./armor/${_id}.json`,'[]')
     fs.writeFileSync(`./armor/vote/${_id}.json`,'[]')
-    fs.writeFileSync('./armor/voting.json', JSON.stringify(voting)) 
+    fs.writeFileSync('./armor/funcoes/voting.json', JSON.stringify(voting)) 
     await sleep(2000)
     let votes = JSON.parse(fs.readFileSync(`./armor/vote/${_id}.json`))  
     votes.push({
@@ -32,7 +32,7 @@ const addVote = async(_id,_value1,_value2,_value3,reply) => {
     reply(`*votação encerrada*\n\n*votos*\n✅ = ${tru.length}\n❌ = ${fals.length}`)
     fs.unlinkSync(`./armor/vote/${_id}.json`)
     fs.unlinkSync(`./armor/${_id}.json`)
-    fs.writeFileSync(`./armor/voting.json`, JSON.stringify(voting)) 
+    fs.writeFileSync(`./armor/funcoes/voting.json`, JSON.stringify(voting)) 
     }, _value3 * 60 * 1000);
 }
 
